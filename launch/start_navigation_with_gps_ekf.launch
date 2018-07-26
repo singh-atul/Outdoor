@@ -1,0 +1,15 @@
+<launch>
+   
+    <!-- Run the map server -->
+    <arg name="map_file" default="$(find mower)/maps/mymap_empty.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    
+
+    <!-- Run view robot for loclization-->
+    <include file="$(find mower)/launch/view_robot.launch" />
+
+       
+    <!--- Run Move Base -->
+    <include file="$(find mower)/launch/with_map_move_base.launch" />
+ 
+</launch>

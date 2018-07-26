@@ -1,0 +1,7 @@
+<launch>
+  <!-- Start Teeop that publishes in /cmd_vel -->
+  <node name="jackal_teleop_keyboard" pkg="mower" type="teleop_twist_keyboard.py" output="screen"/>
+
+  <node name="saver" pkg="mower" type="saver.py" output="screen"/>
+
+</launch>
